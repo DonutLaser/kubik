@@ -1,29 +1,57 @@
 <script lang="ts">
-    import OLLShape from "./OLLShape.svelte";
+    import { onDestroy, onMount } from "svelte";
+    import Oll from "./OLL.svelte";
+    import OllSearch from "./OLLSearch.svelte";
+    import { subscribe, Event } from "./scripts/event-bus";
+
+    let tab = "oll";
+    let searchType = "";
+
+    const subscriptions: Function[] = [];
+    onMount(() => {
+        subscriptions.push(subscribe(Event.TabChanged, onTabChanged));
+        subscriptions.push(subscribe(Event.SearchOpened, onSearchOpened));
+        subscriptions.push(subscribe(Event.SearchClosed, onSearchClosed));
+    });
+
+    onDestroy(() => {
+        for (const unsub of subscriptions) {
+            unsub();
+        }
+    });
+
+    function onTabChanged(newTab: string) {
+        tab = newTab;
+    }
+
+    function onSearchOpened() {
+        searchType = tab;
+    }
+
+    function onSearchClosed() {
+        searchType = "";
+    }
 </script>
 
 <div class="main">
-    <OLLShape />
-    <OLLShape />
-    <OLLShape />
-    <OLLShape />
-    <OLLShape />
+    {#if tab === "oll"}
+        <Oll />
+    {/if}
+
+    {#if searchType === "oll"}
+        <OllSearch />
+    {:else if searchType === "pll"}
+        Hello
+    {/if}
 </div>
 
 <style>
     .main {
+        position: relative;
+
         width: calc(100% - var(--toolbar-width));
         height: 100%;
 
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-
-        column-gap: 1rem;
-        row-gap: 1rem;
-
         background-color: #333;
-
-        padding: 1rem;
     }
 </style>

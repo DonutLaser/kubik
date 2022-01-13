@@ -1,8 +1,40 @@
 <script lang="ts">
+    import { onDestroy, onMount } from "svelte";
+
+    import { emit, Event, subscribe } from "./scripts/event-bus";
+    import * as searchService from "./scripts/search-service";
+
     let activeTab = "oll";
+    let searchActive = false;
+
+    const subscriptions: Function[] = [];
+    onMount(() => {
+        subscriptions.push(subscribe(Event.SearchOpened, onSearchOpen));
+        subscriptions.push(subscribe(Event.SearchClosed, onSearchClosed));
+    });
+
+    onDestroy(() => {
+        for (const unsub of subscriptions) {
+            unsub();
+        }
+    });
+
+    function onSearchOpen() {
+        searchActive = true;
+    }
+
+    function onSearchClosed() {
+        searchActive = false;
+    }
 
     function onTabClick(tabName: string) {
         activeTab = tabName;
+        searchService.closeSearch();
+        emit(Event.TabChanged, tabName);
+    }
+
+    function onSearchClick() {
+        searchService.toggleSearch();
     }
 </script>
 
@@ -23,9 +55,9 @@
     </div>
     <div class="bottom">
         <button
-            class:active={activeTab === "search"}
+            class:active={searchActive}
             on:click={() => {
-                onTabClick("search");
+                onSearchClick();
             }}>Find</button
         >
     </div>
