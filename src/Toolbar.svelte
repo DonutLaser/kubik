@@ -122,7 +122,6 @@
     }
 
     button.active {
-        box-shadow: inset -2px 0px 0px 0px #feb503;
         color: #feb503;
     }
 </style>

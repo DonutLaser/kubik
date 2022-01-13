@@ -8,6 +8,47 @@
         unused: boolean; // Property for UI purposes only
     }
 
+    // Pairs of coordinates to help define the cubes. Setting one pair will disable other pairs.
+    const cubes: number[][][] = [
+        [
+            [0, 1],
+            [1, 0],
+            [1, 1],
+        ],
+        [
+            [0, 2],
+            [1, 2],
+        ],
+        [
+            [0, 3],
+            [1, 3],
+            [1, 4],
+        ],
+        [
+            [2, 0],
+            [2, 1],
+        ],
+        [[2, 2]],
+        [
+            [2, 3],
+            [2, 4],
+        ],
+        [
+            [3, 0],
+            [3, 1],
+            [4, 1],
+        ],
+        [
+            [3, 2],
+            [4, 2],
+        ],
+        [
+            [3, 3],
+            [3, 4],
+            [4, 3],
+        ],
+    ];
+
     let pattern: PatternSquare[][] = [];
 
     onMount(() => {
@@ -42,6 +83,26 @@
 
     function onPatternClick(rowIndex: number, columnIndex: number) {
         pattern[rowIndex][columnIndex].on = !pattern[rowIndex][columnIndex].on;
+
+        if (!pattern[rowIndex][columnIndex].on) {
+            return;
+        }
+
+        let foundCube: number[][] = [];
+        outerLoop: for (const cube of cubes) {
+            for (const pair of cube) {
+                if (pair[0] === rowIndex && pair[1] === columnIndex) {
+                    foundCube = cube;
+                    break outerLoop;
+                }
+            }
+        }
+
+        for (const pair of foundCube) {
+            if (pair[0] !== rowIndex || pair[1] !== columnIndex) {
+                pattern[pair[0]][pair[1]].on = false;
+            }
+        }
     }
 </script>
 
@@ -62,7 +123,7 @@
                     {/each}
                 {/each}
             </div>
-            <div class="oll-search-buttons" />
+            <button class="oll-search-button">Find pattern</button>
         </div>
     </div>
 </div>
@@ -95,7 +156,7 @@
 
         padding: 1rem;
 
-        background-color: #464646;
+        background-color: #555;
 
         border-radius: 0.5rem;
 
@@ -114,6 +175,7 @@
 
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 2rem;
     }
 
     .oll-search-pattern-square {
@@ -145,5 +207,28 @@
 
     .oll-search-pattern-square.dummy {
         visibility: hidden;
+    }
+
+    .oll-search-button {
+        flex: 1;
+
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #bbb;
+
+        border-radius: 0.5rem;
+        border: none;
+
+        font-family: Consolas;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .oll-search-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+    }
+
+    .oll-search-button:active {
+        background-color: rgba(255, 255, 255, 0.2);
     }
 </style>
