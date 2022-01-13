@@ -52,6 +52,12 @@
                 onTabClick("pll");
             }}>PLL</button
         >
+        <button
+            class:active={activeTab === "time"}
+            on:click={() => {
+                onTabClick("time");
+            }}>Time</button
+        >
     </div>
     <div class="bottom">
         <button

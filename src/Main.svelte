@@ -36,6 +36,10 @@
 <div class="main">
     {#if tab === "oll"}
         <Oll />
+    {:else if tab === "pll"}
+        Pll tab
+    {:else if tab === "time"}
+        Time tab
     {/if}
 
     {#if searchType === "oll"}

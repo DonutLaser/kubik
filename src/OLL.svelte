@@ -1,13 +1,14 @@
 <script lang="ts">
-    import OllShape from "./OLLShape.svelte";
+    import OllSection from "./OLLSection.svelte";
+    import patterns from "./data/patterns";
+
+    console.log(patterns);
 </script>
 
 <div class="oll">
-    <OllShape />
-    <OllShape />
-    <OllShape />
-    <OllShape />
-    <OllShape />
+    {#each patterns as section}
+        <OllSection title={section.title} patterns={section.patterns} />
+    {/each}
 </div>
 
 <style>
@@ -15,13 +16,6 @@
         width: 100%;
         height: 100%;
 
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-
-        column-gap: 1rem;
-        row-gap: 1rem;
-
-        padding: 1rem;
+        overflow-y: auto;
     }
 </style>
