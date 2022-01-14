@@ -7,6 +7,7 @@ export enum Event {
     TabChanged = 'tab-changed',
     SearchOpened = 'search-opened',
     SearchClosed = 'search-closed',
+    SearchRequested = 'search-requested',
 }
 
 let nextId = 0;

@@ -104,6 +104,26 @@
             }
         }
     }
+
+    function onFindClick() {
+        searchService.closeSearch();
+
+        const pat: number[][] = [];
+
+        for (let y = 0; y < 5; ++y) {
+            pat[y] = [];
+            for (let x = 0; x < 5; ++x) {
+                if (pattern[y][x].unused) {
+                    pat[y][x] = 2;
+                } else if (pattern[y][x].on) {
+                    pat[y][x] = 1;
+                } else {
+                    pat[y][x] = 0;
+                }
+            }
+        }
+        searchService.findPattern(pat);
+    }
 </script>
 
 <div class="oll-search">
@@ -123,7 +143,7 @@
                     {/each}
                 {/each}
             </div>
-            <button class="oll-search-button">Find pattern</button>
+            <button class="oll-search-button" on:click={onFindClick}>Find pattern</button>
         </div>
     </div>
 </div>

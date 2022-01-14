@@ -3,6 +3,7 @@
     import type { Pattern } from "./scripts/types";
 
     export let title = "Title";
+    export let id = "";
     export let patterns: Pattern[] = [];
 
     let showing = true;
@@ -12,7 +13,7 @@
     }
 </script>
 
-<div class="oll-section">
+<div class="oll-section" {id}>
     <div class="oll-section-header" class:with-border={!showing}>
         <div class="left">{title}</div>
         <div class="right">
@@ -22,7 +23,7 @@
     {#if showing}
         <div class="oll-section-body">
             {#each patterns as pattern}
-                <OllShape />
+                <OllShape pattern={pattern.pattern} solution={pattern.solution} />
             {/each}
         </div>
     {/if}
@@ -55,6 +56,8 @@
         font-family: Consolas;
         font-size: 1rem;
         font-weight: 600;
+
+        user-select: none;
     }
 
     .oll-section-header.with-border {

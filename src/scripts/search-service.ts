@@ -20,6 +20,10 @@ export function toggleSearch() {
     }
 }
 
+export function findPattern(pattern: number[][]) {
+    emit(Event.SearchRequested, pattern);
+}
+
 export function isSearchOpen(): boolean {
     return open;
 }
