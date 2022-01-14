@@ -58,6 +58,12 @@
                 onTabClick("time");
             }}>Time</button
         >
+        <button
+            class:active={activeTab === "help"}
+            on:click={() => {
+                onTabClick("help");
+            }}>Help</button
+        >
     </div>
     <div class="bottom">
         <button

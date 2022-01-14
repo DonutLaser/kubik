@@ -40,6 +40,8 @@
         Pll tab
     {:else if tab === "time"}
         Time tab
+    {:else if tab === "help"}
+        Help tab
     {/if}
 
     {#if searchType === "oll"}
