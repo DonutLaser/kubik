@@ -4,6 +4,7 @@
 
     export let pattern: number[][] = [[]];
     export let solution = "";
+    export let production = "";
 
     function onShapeClick() {
         openModal(
@@ -14,7 +15,7 @@
                 animate: false,
                 customWindowClass: "custom-modal-window",
             },
-            { solution }
+            { solution, production }
         );
     }
 </script>

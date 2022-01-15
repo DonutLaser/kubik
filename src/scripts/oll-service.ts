@@ -1,7 +1,7 @@
 import patterns from './../data/patterns';
 
 const algorithmPatterns = {
-    '#green': { value: '(R U R` U`)', color: 'color-green' },
+    '#green': { value: '(R U R` U)', color: 'color-green' },
     '#green2': { value: '(r U R` U)', color: 'color-green' },
     '#greeninvert': { value: '(L` U` L U`)', color: 'color-green' },
     '#red': { value: '(R U R` U`)', color: 'color-red' },

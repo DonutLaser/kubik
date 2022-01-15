@@ -11,7 +11,8 @@ export default [
                     [0, 1, 1, 0, 0],
                     [2, 0, 0, 1, 2],
                 ],
-                solution: '#green R U2 R',
+                solution: '#green R U2 R`',
+                production: 'R U2 R` U` R U` R`',
             },
             {
                 pattern: [
@@ -22,6 +23,7 @@ export default [
                     [2, 1, 0, 0, 2],
                 ],
                 solution: 'R U2 R` U` R U` R`',
+                production: '#green R U2 R`'
             },
             {
                 pattern: [
@@ -32,6 +34,7 @@ export default [
                     [2, 0, 0, 1, 2],
                 ],
                 solution: 'R U2` R2` U` R2 U` R2` U2 R',
+                production: 'R U2` R2` U` R2 U` R2` U2 R',
             },
             {
                 pattern: [
@@ -42,6 +45,7 @@ export default [
                     [2, 1, 0, 1, 2],
                 ],
                 solution: 'y (R` U` R) U` (R` U R) U` (R` U2 R)',
+                production: 'y (R` U` R) U` (R` U R) U` (R` U2 R)',
             },
             {
                 pattern: [
@@ -51,7 +55,8 @@ export default [
                     [0, 0, 1, 1, 0],
                     [2, 1, 0, 0, 2],
                 ],
-                solution: '#red2 #blue2'
+                solution: '#red2 #blue2',
+                production: 'F` #red2 (r` F R)',
             },
             {
                 pattern: [
@@ -61,7 +66,8 @@ export default [
                     [0, 1, 1, 0, 0],
                     [2, 0, 0, 1, 2],
                 ],
-                solution: 'F` #red2 (r` F R)'
+                solution: 'F` #red2 (r` F R)',
+                production: '#red2 #blue2'
             },
             {
                 pattern: [
@@ -71,17 +77,8 @@ export default [
                     [0, 0, 1, 0, 0],
                     [2, 1, 0, 1, 2],
                 ],
-                solution: 'R2 [D (R` U2) R] [D` (R` U2) R`]'
-            },
-            {
-                pattern: [
-                    [2, 0, 0, 0, 2],
-                    [0, 1, 1, 1, 0],
-                    [0, 1, 1, 1, 0],
-                    [0, 1, 1, 1, 0],
-                    [2, 0, 0, 0, 2],
-                ],
-                solution: 'SOLVED'
+                solution: 'R2 [D (R` U2) R] [D` (R` U2) R`]',
+                production: '#red2 #blue2 U #green R U2 R`',
             },
         ]
     },
@@ -97,7 +94,8 @@ export default [
                     [0, 1, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#red M` (U R U` r`)'
+                solution: '#red M` (U R U` r`)',
+                production: '#red M` (U R U` r`) #red M` (U R U` r`)',
             },
             {
                 pattern: [
@@ -107,7 +105,8 @@ export default [
                     [0, 1, 1, 1, 0],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'M` U M U2 M` U M'
+                solution: 'M` U M U2 M` U M',
+                production: '#red M` (U R U` r`)',
             },
         ]
     },
@@ -123,7 +122,8 @@ export default [
                     [1, 0, 1, 1, 0],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'f #red f`'
+                solution: 'f #red f`',
+                production: 'F #red F`',
             },
             {
                 pattern: [
@@ -133,7 +133,8 @@ export default [
                     [0, 1, 1, 0, 1],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'f` #redinvert f'
+                solution: 'f` #redinvert f',
+                production: 'R` U` #blue U R',
             },
             {
                 pattern: [
@@ -143,17 +144,19 @@ export default [
                     [0, 0, 1, 1, 0],
                     [2, 1, 0, 0, 2],
                 ],
-                solution: 'R d L` d` R` U R B R`'
+                solution: 'R d L` d` R` U R B R`',
+                production: '#greeninvert (L` U L U) #blueinvert',
             },
             {
                 pattern: [
-                    [2, 1, 0, 0, 2],
-                    [0, 0, 1, 1, 0],
-                    [1, 0, 1, 1, 0],
-                    [0, 0, 0, 1, 0],
-                    [2, 1, 1, 0, 2],
+                    [2, 0, 1, 1, 2],
+                    [0, 1, 0, 0, 0],
+                    [0, 1, 1, 0, 1],
+                    [0, 1, 1, 0, 0],
+                    [2, 0, 0, 1, 2],
                 ],
-                solution: 'y2 L` d` R d L U` L` B` L'
+                solution: 'L` d` R d L U` L` B` L',
+                production: '#green (R U` R` U`) #blue',
             },
         ]
     },
@@ -169,7 +172,8 @@ export default [
                     [0, 1, 0, 0, 1],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#green (R U` R` U`) #blue'
+                solution: '#green (R U` R` U`) #blue',
+                production: '',
             },
             {
                 pattern: [
@@ -179,7 +183,8 @@ export default [
                     [1, 0, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#greeninvert (L` U L U) #blueinvert'
+                solution: '#greeninvert (L` U L U) #blueinvert',
+                production: '',
             },
         ]
     },
@@ -195,7 +200,8 @@ export default [
                     [0, 0, 0, 0, 1],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: 'r U2 R` U` R U` r`'
+                solution: 'r U2 R` U` R U` r`',
+                production: '#green2 R U2 r`',
             },
             {
                 pattern: [
@@ -205,7 +211,8 @@ export default [
                     [1, 0, 1, 1, 0],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'r` U2 #green r'
+                solution: 'r` U2 #green r',
+                production: 'r` U` R U` R` U2 r',
             },
         ]
     },
@@ -221,7 +228,8 @@ export default [
                     [1, 0, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: 'F #red #red F`'
+                solution: 'F #red #red F`',
+                production: 'f #red #red f`',
             },
             {
                 pattern: [
@@ -231,7 +239,8 @@ export default [
                     [0, 0, 0, 0, 1],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: 'F` #redinvert #redinvert F'
+                solution: 'F` #redinvert #redinvert F',
+                production: 'R` U2 R2 U R` U R U2 x` U` R` U',
             },
             {
                 pattern: [
@@ -241,7 +250,8 @@ export default [
                     [1, 0, 0, 0, 1],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'y2 r` U` R U` R` U R U` R` U2 r'
+                solution: 'y2 r` U` R U` R` U R U` R` U2 r',
+                production: 'y2 r` U` R U` R` U R U` R` U2 r',
             },
             {
                 pattern: [
@@ -251,7 +261,8 @@ export default [
                     [1, 0, 0, 0, 1],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#green2 R U` R` U R U2 r`'
+                solution: '#green2 R U` R` U R U2 r`',
+                production: '#green2 R U` R` U R U2 r`',
             },
             {
                 pattern: [
@@ -261,7 +272,8 @@ export default [
                     [1, 0, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: '#blue3 R2 U2 y #blue'
+                solution: '#blue3 R2 U2 y #blue',
+                production: 'R` F R2 B` R2 F` R2 B R`',
             },
             {
                 pattern: [
@@ -271,7 +283,8 @@ export default [
                     [0, 0, 0, 0, 1],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: 'R` F R2 B` R2 F` R2 B R`'
+                solution: 'R` F R2 B` R2 F` R2 B R`',
+                production: 'F #red R F` #red2 r`',
             },
         ]
     },
@@ -287,7 +300,8 @@ export default [
                     [0, 0, 0, 1, 0],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: '#red R` F R2 U R` U` F'
+                solution: '#red R` F R2 U R` U` F',
+                production: 'F U R U` R2 F` R (U R U` R`)',
             },
             {
                 pattern: [
@@ -297,7 +311,8 @@ export default [
                     [1, 0, 1, 0, 0],
                     [2, 0, 0, 1, 2],
                 ],
-                solution: '#green #blue R U2 R`'
+                solution: '#green #blue R U2 R`',
+                production: 'R` F R U R` F` R y` R U` R`',
             },
             {
                 pattern: [
@@ -307,7 +322,8 @@ export default [
                     [0, 0, 1, 1, 0],
                     [2, 1, 0, 0, 2],
                 ],
-                solution: '(R U2 R`) #blue (R U2 R`)'
+                solution: '(R U2 R`) #blue (R U2 R`)',
+                production: '',
             },
             {
                 pattern: [
@@ -317,7 +333,8 @@ export default [
                     [0, 0, 0, 1, 0],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: 'F R U` R` U` R U R` F`'
+                solution: 'F R U` R` U` R U R` F`',
+                production: '(R U2 R`) #blue (R U2 R`)',
             },
         ]
     },
@@ -333,7 +350,8 @@ export default [
                     [1, 0, 1, 0, 1],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'R2 U R` B` R U` R2 U R B R`'
+                solution: 'R2 U R` B` R U` R2 U R B R`',
+                production: '',
             },
             {
                 pattern: [
@@ -343,7 +361,8 @@ export default [
                     [0, 0, 0, 1, 0],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: '[F #red F`] U2 [#red #blue]'
+                solution: '[F #red F`] U2 [ #red #blue ]',
+                production: '',
             },
             {
                 pattern: [
@@ -353,7 +372,8 @@ export default [
                     [0, 1, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '[#green R U2 R`] [F #red F`]'
+                solution: '[ #green R U2 R`] [F #red F`]',
+                production: 'R` F R U R` F` R y` R U` R` M U #red M` #blue',
             },
             {
                 pattern: [
@@ -363,7 +383,8 @@ export default [
                     [1, 0, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#blue #blue #red (R U R`)'
+                solution: '#blue #blue #red (R U R`)',
+                production: '',
             },
         ]
     },
@@ -379,7 +400,8 @@ export default [
                     [0, 1, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: '#green2 R U2 r`'
+                solution: '#green2 R U2 r`',
+                production: 'r U2 R` U` R U` r`',
             },
             {
                 pattern: [
@@ -389,7 +411,8 @@ export default [
                     [0, 0, 1, 0, 1],
                     [2, 1, 0, 0, 2],
                 ],
-                solution: 'r` U` R U` R` U2 r'
+                solution: 'r` U` R U` R` U2 r',
+                production: 'r` U2 #green r',
             },
             {
                 pattern: [
@@ -399,7 +422,8 @@ export default [
                     [1, 0, 1, 0, 0],
                     [2, 0, 0, 1, 2],
                 ],
-                solution: 'y (r U R` U) (R` F R F`) R U2 r`'
+                solution: 'y #green2 #blue R U2 r`',
+                production: '',
             },
             {
                 pattern: [
@@ -409,7 +433,8 @@ export default [
                     [0, 0, 1, 0, 1],
                     [2, 1, 0, 0, 2],
                 ],
-                solution: '[F #red F`] U [F #red F`]'
+                solution: '[F #red F`] U [F #red F`]',
+                production: '',
             },
             {
                 pattern: [
@@ -419,7 +444,8 @@ export default [
                     [0, 1, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: 'y2 L F` #redinvert F U` L`'
+                solution: 'y2 L F` #redinvert F U` L`',
+                production: 'R d L` d` R` U R B R`',
             },
             {
                 pattern: [
@@ -429,7 +455,8 @@ export default [
                     [1, 0, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'R` [F #red F`] U R'
+                solution: 'R` [F #red F`] U R',
+                production: 'y2 L` d` R d L U` L` B` L',
             },
         ]
     },
@@ -445,7 +472,8 @@ export default [
                     [1, 0, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'F #red F`'
+                solution: 'F #red F`',
+                production: 'f #red f`',
             },
             {
                 pattern: [
@@ -455,7 +483,8 @@ export default [
                     [0, 0, 0, 1, 0],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: '#red #blue'
+                solution: '#red #blue',
+                production: 'F R U` R` U` R U R` F`',
             },
         ]
     },
@@ -471,7 +500,8 @@ export default [
                     [0, 1, 1, 0, 1],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'R` U` #blue U R'
+                solution: 'R` U` #blue U R',
+                production: '',
             },
             {
                 pattern: [
@@ -481,7 +511,8 @@ export default [
                     [0, 1, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#red x D` R` U R U` D x`'
+                solution: '#red x D` R` U R U` D x`',
+                production: 'F R U` R` U` R U R` F`(R U2 R`) #blue (R U2 R`) ',
             },
         ]
     },
@@ -497,7 +528,8 @@ export default [
                     [1, 0, 1, 0, 1],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: 'R` U2 R2 U R` U R U2 x` U` R U'
+                solution: 'R` U2 R2 U R` U R U2 x` U` R` U',
+                production: '',
             },
             {
                 pattern: [
@@ -507,7 +539,8 @@ export default [
                     [0, 0, 1, 0, 1],
                     [2, 1, 0, 0, 2],
                 ],
-                solution: 'R` U` R U` R` d R` U R B'
+                solution: 'R` U` R U` R` d R` U R B',
+                production: 'R` U` R U` R` d R` U R B',
             },
             {
                 pattern: [
@@ -517,7 +550,8 @@ export default [
                     [1, 0, 0, 0, 1],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'F #red R F` #red2 r`'
+                solution: 'F #red R F` #red2 r`',
+                production: '',
             },
             {
                 pattern: [
@@ -527,7 +561,8 @@ export default [
                     [1, 0, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: 'f #red #red f`'
+                solution: 'f #red #red f`',
+                production: 'F #red #red F`',
             },
         ]
     },
@@ -543,7 +578,8 @@ export default [
                     [0, 0, 0, 0, 1],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: '(r U r`) #red (r U` r`)'
+                solution: '(r U r`) #red (r U` r`)',
+                production: '',
             },
             {
                 pattern: [
@@ -553,7 +589,8 @@ export default [
                     [1, 0, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: '(l` U` l) #redinvert (l` U l)'
+                solution: '(l` U` l) #redinvert (l` U l)',
+                production: '',
             },
             {
                 pattern: [
@@ -563,7 +600,8 @@ export default [
                     [0, 1, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: 'F U R U` R2 F` R (U R U` R`)'
+                solution: 'F U R U` R2 F` R (U R U` R`)',
+                production: '#red R` F R2 U R` U` F',
             },
             {
                 pattern: [
@@ -573,7 +611,8 @@ export default [
                     [0, 0, 0, 1, 0],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: 'R` F R U R` F` R y` R U` R`'
+                solution: 'R` F R U R` F` R y` R U` R`',
+                production: '',
             },
         ]
     },
@@ -589,7 +628,8 @@ export default [
                     [1, 0, 0, 0, 1],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'R U2 R` #blue U2 #blue'
+                solution: 'R U2 R` #blue U2 #blue',
+                production: '',
             },
             {
                 pattern: [
@@ -599,7 +639,8 @@ export default [
                     [1, 0, 0, 0, 0],
                     [2, 0, 1, 1, 2],
                 ],
-                solution: '[F #red F`] [f #red f`]'
+                solution: '[F #red F`] [f #red f`]',
+                production: 'R U2 R` #blue U2 #blue',
             },
             {
                 pattern: [
@@ -609,7 +650,8 @@ export default [
                     [1, 0, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '[f #red f`] U` [F #red F`]'
+                solution: '[f #red f`] U` [F #red F`]',
+                production: '',
             },
             {
                 pattern: [
@@ -619,7 +661,8 @@ export default [
                     [0, 0, 0, 0, 1],
                     [2, 1, 1, 0, 2],
                 ],
-                solution: '[f #red f`] U [F #red F`]'
+                solution: '[f #red f`] U [F #red F`]',
+                production: '[f #red f`] U` [F #red F`]',
             },
             {
                 pattern: [
@@ -629,7 +672,8 @@ export default [
                     [0, 1, 0, 1, 0],
                     [2, 0, 0, 0, 2],
                 ],
-                solution: '[F #green F`] y` U2 #blue'
+                solution: '[F #green F`] y` U2 #blue',
+                production: '#green #blue U2 #blue',
             },
             {
                 pattern: [
@@ -639,7 +683,8 @@ export default [
                     [1, 0, 0, 0, 1],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'M U #red M` #blue'
+                solution: 'M U #red M` #blue',
+                production: '',
             },
             {
                 pattern: [
@@ -649,7 +694,8 @@ export default [
                     [1, 0, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: '#green #blue U2 #blue'
+                solution: '#green #blue U2 #blue',
+                production: '[F #green F`] y` U2 #blue',
             },
             {
                 pattern: [
@@ -659,7 +705,8 @@ export default [
                     [0, 1, 0, 1, 0],
                     [2, 0, 1, 0, 2],
                 ],
-                solution: 'M U #red M2 (U R U` r`)'
+                solution: 'M U #red M2 (U R U` r`)',
+                production: 'M U #red M2 (U R U` r`)',
             },
         ]
     }

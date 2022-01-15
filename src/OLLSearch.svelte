@@ -187,8 +187,8 @@
         display: grid;
         grid-template-columns: 0.5fr 3fr 3fr 3fr 0.5fr;
         grid-template-rows: 0.5fr 3fr 3fr 3fr 0.5fr;
-        column-gap: 1rem;
-        row-gap: 1rem;
+        column-gap: 0.65rem;
+        row-gap: 0.65rem;
 
         height: 30vh;
         width: 30vh;

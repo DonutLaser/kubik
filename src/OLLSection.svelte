@@ -14,16 +14,13 @@
 </script>
 
 <div class="oll-section" {id}>
-    <div class="oll-section-header" class:with-border={!showing}>
+    <div class="oll-section-header" class:with-border={!showing} on:click={onHideClick}>
         <div class="left">{title}</div>
-        <div class="right">
-            <button on:click={onHideClick}>{showing ? "Hide" : "Show"}</button>
-        </div>
     </div>
     {#if showing}
         <div class="oll-section-body">
             {#each patterns as pattern}
-                <OllShape pattern={pattern.pattern} solution={pattern.solution} />
+                <OllShape pattern={pattern.pattern} solution={pattern.solution} production={pattern.production} />
             {/each}
         </div>
     {/if}
@@ -60,51 +57,21 @@
         user-select: none;
     }
 
+    .oll-section-header:hover {
+        background-color: #4b4b4b;
+        cursor: pointer;
+    }
+
+    .oll-section-header:active {
+        background-color: #555;
+    }
+
     .oll-section-header.with-border {
         border-bottom: 1px solid #333;
     }
 
-    .oll-section-header .left,
-    .oll-section-header .right {
-        display: flex;
-        flex: 1;
-        align-items: center;
-
-        height: 100%;
-    }
-
-    button {
-        height: 100%;
-
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        background-color: rgba(255, 255, 255, 0.05);
-        color: #bbb;
-
-        border-radius: 0.5rem;
-        border: none;
-
-        font-family: Consolas;
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    button:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        cursor: pointer;
-    }
-
-    button:active {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .oll-sect .oll-section-header .left {
+    .oll-section-header .left {
         justify-content: flex-start;
-    }
-
-    .oll-section-header .right {
-        justify-content: flex-end;
     }
 
     .oll-section-body {
